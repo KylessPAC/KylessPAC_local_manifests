@@ -60,8 +60,7 @@
     <project path="external/bluetooth/glib" name="KlinkOnE/android_external_bluetooth_glib" revision="master" />
 
 	<!--TWRP-->
-	<remove-project path="bootable/recovery-twrp" name="android_bootable_recovery" remote="omnirom" revision="android-4.4" />
-    <project path="bootable/recovery-twrp" name="android_bootable_recovery" remote="omnirom" revision="android-7.0" />
+<!--	FUCK YOU TWRP-->
 
     
 
