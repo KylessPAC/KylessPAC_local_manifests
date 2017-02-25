@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+	<!--Device,Kernel,Vendor trees-->
+    <project path="device/samsung/kylessopen" name="KylessPAC/android_device_samsung_kylessopen" revision="pac-4.4" />
+    <project path="kernel/samsung/kylessopen" name="KylessPAC/FrankenKernel" revision="test" />
+    <project path="vendor/samsung/kylessopen" name="KylessPAC/android_vendor_samsung_kylessopen" revision="master"/>
+
+	<!--KylessPAC framework_base-->
+	<remove-project path="frameworks/base" name="android_frameworks_base" remote="pac" revision="pac-4.4" />
+	<project path="frameworks/base" name="KylessPAC/KylessPAC/android_frameworks_base" revision="pac-4.4"/>
+
+
+    <!-- CM replacements -->
+    <remove-project path="packages/apps/Stk" name="android_packages_apps_Stk" remote="cm" />
+    <remove-project path="packages/apps/Bluetooth" name="android_packages_apps_Bluetooth" remote="cm" />
+    <project path="packages/apps/Bluetooth" name="KlinkOnE/android_packages_apps_Bluetooth---daniel" revision="cm-11.0" />
+       
+	<!--Legacymod av for devices without stock JB-->
+    <remove-project  path="frameworks/av" name="android_frameworks_av" groups="pdk" remote="cm" />
+    <project path="frameworks/av" name="kengnatural/android_frameworks_av" revision="cm-11.0" />
+
+	<!--Stock RIL-->
+    <remove-project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" remote="cm" />
+	<project path="frameworks/opt/telephony" name="pavlepiramida/android_frameworks_opt_telephony" revision="cm-11.0" />
+    
+	<!--Native by Legacymode	-->
+    <remove-project path="frameworks/native" name="android_frameworks_native" groups="pdk" remote="cm" />
+    <project path="frameworks/native" name="legaCyMod/android_frameworks_native" revision="cm-11.0" />	
+
+
+	<!-- HALs by legacy-->
+    <remove-project path="hardware/libhardware_legacy" name="android_hardware_libhardware_legacy" groups="pdk" remote="cm" />
+    <project path="hardware/libhardware_legacy" name="legaCyMod/android_hardware_libhardware_legacy" revision="cm-11.0" />
+    
+    <!--ArchisART-->
+    <remove-project path="art" name="android_art" remote="cm" />
+    <project path="art" name="ArchiDroid/android_art" revision="cm-11.0" />
+
+    <!-- display-legacy -->
+    <remove-project path="hardware/qcom/display-legacy" name="androidarmv6/android_hardware_qcom_display-legacy" />
+    <project path="hardware/qcom/display-legacy" name="legaCyMod/android_hardware_qcom_display-legacy" revision="cm-11.0" />
+
+    <!-- Removed CM projects -->
+    <remove-project path="external/bluetooth/bluedroid" name="android_external_bluetooth_bluedroid" groups="pdk" remote="cm" />
+    <remove-project path="packages/apps/CMUpdater" name="android_packages_apps_CMUpdater" remote="cm" />
+    <remove-project  path="packages/apps/VideoEditor" name="android_packages_apps_VideoEditor" remote="cm" />
+    <remove-project path="packages/apps/PACConsole" name="android_packages_apps_PACConsole" remote="pac" revision="pac-4.4" />
+
+    <!-- Local projects -->
+    <project path="hardware/atheros/wlan" name="legaCyMod/android_hardware_atheros_wlan" revision="cm-11.0" />
+
+    <!--Legacymod Qcom media-->
+    <remove-project  path="hardware/qcom/media-legacy" name="androidarmv6/android_hardware_qcom_media-legacy" revision="cm-11.0" />
+    <project path="hardware/qcom/media-legacy" name="legaCyMod/android_hardware_qcom_media-legacy" revision="cm-11.0" />
+    
+    <!--Bluetooth-->
+    <project path="external/bluetooth/bluez" name="KlinkOnE/android_external_bluetooth_bluez" revision="master" />
+    <project path="external/bluetooth/sbc" name="KlinkOnE/android_external_bluetooth_sbc" revision="master" />
+    <project path="external/bluetooth/glib" name="KlinkOnE/android_external_bluetooth_glib" revision="master" />
+
+	<!--TWRP-->
+	<remove-project path="bootable/recovery-twrp" name="android_bootable_recovery" remote="omnirom" revision="android-4.4" /> 
+    <project path="bootable/recovery-twrp" name="omnirom/android_bootable_recovery" revision="android-7.0" />
+
+    
+
+  
+	<!-- Remove stuff we dont need -->
+    <remove-project name="platform/prebuilts/clang/darwin-x86/3.1" groups="darwin" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+    <remove-project name="platform/prebuilts/clang/darwin-x86/3.2" groups="darwin" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/clang/darwin-x86/arm/3.3" groups="darwin,arm" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/clang/darwin-x86/host/3.3" groups="darwin" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/clang/darwin-x86/mips/3.3" groups="darwin,mips" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/clang/darwin-x86/x86/3.3" groups="darwin,x86" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.7" groups="pdk,darwin,x86" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6" groups="darwin,arm" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.7" remote="aosp" groups="pdk,darwin,arm" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6" groups="darwin,arm" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.7" groups="pdk,darwin,arm" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="pdk,darwin" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.6" groups="darwin,mips" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.7" groups="pdk,darwin,mips" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.6" groups="darwin,x86" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.7" groups="pdk,darwin,x86" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+	<remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" groups="darwin" remote="aosp" revision="refs/tags/android-4.4_r1.2"/>
+
+</manifest>
